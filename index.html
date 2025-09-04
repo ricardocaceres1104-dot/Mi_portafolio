@@ -8,7 +8,7 @@
 <style>
   :root{
     --bg:#0c1220;--fg:#eaf2ff;--muted:#a8b3c9;--card:#111a2c;--line:#1b2a44;
-    --grad1:#42a5ff;--grad2:#7cffe0;--accent:#00e5ff;--pill:#0f1e35;
+    --grad1:#1976d2;--grad2:#0d47a1;--accent:#00e5ff;--pill:#0f1e35;
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:linear-gradient(180deg,#0a0f1c 0%,#0b1120 100%);color:var(--fg);font-family:Inter,system-ui,Segoe UI,Roboto,Arial}
@@ -24,8 +24,21 @@
   .badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:10px}
   .badge{background:linear-gradient(135deg,#163056,#0f203a);border:1px solid #26446b;padding:8px 12px;border-radius:999px;font-size:13px}
   .cta-row{display:flex;gap:12px;justify-content:center;margin-top:16px}
-  .btn{display:inline-block;padding:12px 16px;border-radius:12px;font-weight:700;border:1px solid #1d3557;background:linear-gradient(135deg,var(--grad1),var(--grad2));color:#00131a}
-  .btn.ghost{background:transparent;color:var(--fg);border:1px solid #254368}
+  .btn{
+    display:inline-block;
+    padding:12px 18px;
+    border-radius:12px;
+    font-weight:700;
+    border:none;
+    background:linear-gradient(135deg,var(--grad1),var(--grad2));
+    color:#fff;
+    transition:all .25s ease;
+  }
+  .btn:hover{
+    transform:translateY(-2px);
+    background:linear-gradient(135deg,#0d47a1,#0b3c91);
+    box-shadow:0 6px 20px rgba(0,0,0,.3);
+  }
   section{max-width:1100px;margin:0 auto;padding:28px 16px}
   h2{font-size:28px;margin:0 0 12px}
   .grid{display:grid;gap:16px}
@@ -46,10 +59,6 @@
     border:1px solid #223b60;
     padding:10px;
   }
-
-  @keyframes glow{0%{box-shadow:0 0 0 rgba(0,0,0,0)}100%{box-shadow:0 0 40px rgba(124,255,224,.12)}}
-  .ring{position:relative;isolation:isolate}
-  .ring:after{content:"";position:absolute;inset:-2px;border-radius:18px;background:linear-gradient(135deg,rgba(66,165,255,.35),rgba(124,255,224,.25));filter:blur(12px);z-index:-1;animation:glow 2.8s ease-in-out infinite alternate}
 </style>
 </head>
 <body>
@@ -69,7 +78,7 @@
   </header>
 
   <div class="hero">
-    <h1 class="title ring">Ingeniero en Conectividad y Redes</h1>
+    <h1 class="title">Ingeniero en Conectividad y Redes</h1>
     <p class="subtitle">
       Experiencia en ISP, telecomunicaciones y ciberseguridad. Trabajo con <b>VLANs</b>, <b>OSPF/EIGRP/BGP</b>, 
       <b>ACLs</b>, autenticación <b>TACACS+</b>, monitoreo <b>Syslog</b> y <b>túneles VPN (IPsec)</b>. 
@@ -79,43 +88,7 @@
       <span class="badge">#Redes</span><span class="badge">#Ciberseguridad</span><span class="badge">#ISP</span>
       <span class="badge">#Linux</span><span class="badge">#Cisco</span><span class="badge">#Wireshark</span>
     </div>
-    <div class="cta-row">
-      <a class="btn" href="#proyectos">Ver proyectos</a>
-      <a class="btn ghost" href="#contacto">Contactar</a>
-    </div>
   </div>
-
-  <section id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <div class="card">
-      <p class="muted">
-        Soy <b>Ricardo Cáceres Vera</b>, Ingeniero en Conectividad y Redes titulado (Duoc UC).
-        Me enfoco en diseño, implementación y aseguramiento de redes corporativas. 
-        Documentación clara (diagramas, CLI y capturas) y aplicación de buenas prácticas para 
-        infraestructuras seguras, estables y escalables.
-      </p>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="card">
-      <div>
-        <span class="pill">VLANs / Inter-VLAN</span>
-        <span class="pill">OSPF / EIGRP / BGP</span>
-        <span class="pill">ACLs (L3/L4)</span>
-        <span class="pill">TACACS+</span>
-        <span class="pill">Syslog centralizado</span>
-        <span class="pill">VPN IPsec</span>
-        <span class="pill">DHCP / NAT</span>
-        <span class="pill">Kali Linux</span>
-        <span class="pill">Nmap</span>
-        <span class="pill">Wireshark</span>
-        <span class="pill">IoT / Cableado</span>
-        <span class="pill">Metodologías ágiles</span>
-      </div>
-    </div>
-  </section>
 
   <section id="proyectos">
     <h2>Proyectos</h2>
@@ -132,7 +105,7 @@
         <p>
           <a class="btn"
              href="Ricardo%20C%C3%A1ceres%20-%20Prueba%20Soluciones%20de%20seguridad%20en%20redes%20corporativas.pkt"
-             target="_blank" rel="noopener">Ver evidencia (.pkt)</a>
+             target="_blank" rel="noopener">Trabajos realizados</a>
         </p>
       </article>
 
@@ -144,9 +117,9 @@
           Checklist de endurecimiento, registros centralizados y verificación con capturas y comandos.
         </p>
         <p>
-          <a class="btn ghost"
+          <a class="btn"
              href="https://raw.githubusercontent.com/ricardocaceres1104-dot/Mi_portafolio/main/Informe_Testeo_Seguridad_Ricardo_Caceres.docx%20(2).pdf"
-             target="_blank" rel="noopener">Ver informe (PDF)</a>
+             target="_blank" rel="noopener">Trabajos realizados</a>
         </p>
       </article>
 
@@ -158,9 +131,9 @@
           Flujo básico de logging y alertas para visibilidad y reacción ante eventos.
         </p>
         <p>
-          <a class="btn ghost"
+          <a class="btn"
              href="https://raw.githubusercontent.com/ricardocaceres1104-dot/Mi_portafolio/main/03._Desaf%C3%ADo_-_Detecci%C3%B3n_y_prevenci%C3%B3n_de_intrusiones.Ricardo_C%C3%A1ceres.pdf"
-             target="_blank" rel="noopener">Ver informe / demo (PDF)</a>
+             target="_blank" rel="noopener">Trabajos realizados</a>
         </p>
       </article>
 
@@ -174,36 +147,6 @@
         Comunicación efectiva y trabajo en equipo · Proactividad y aprendizaje continuo · 
         Orientación a resultados y mejora constante · Adaptabilidad y gestión del tiempo ·
         Liderazgo situacional y enfoque en el cliente interno/externo · Resolución de problemas técnicos con claridad y calma.
-      </p>
-    </div>
-  </section>
-
-  <section id="certs">
-    <h2>Cursos y certificaciones</h2>
-    <div class="grid cols-2">
-      <div class="card">
-        <h3>Redes y seguridad</h3>
-        <p class="muted">
-          CCNA, CCNP (módulos), Ciberseguridad operativa, Comunicaciones unificadas, IoT, 
-          Administración de servicios de red.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Herramientas</h3>
-        <p class="muted">
-          Kali Linux, Wireshark, Nmap; configuración de routers/switches Cisco; 
-          documentación técnica clara y reproducible.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="experiencia">
-    <h2>Experiencia</h2>
-    <div class="card">
-      <p class="muted">
-        Experiencia en telecomunicaciones e ISP; participación en proyectos de modernización de redes, 
-        soporte y operación, con foco en calidad, seguridad y continuidad de servicio.
       </p>
     </div>
   </section>
