@@ -32,7 +32,7 @@
   }
   .nav-links a:hover:after{transform:scaleX(1)}
 
-  /* ===== Hero con degradado ===== */
+  /* ===== Hero ===== */
   .hero{
     text-align:center;padding:64px 20px 36px;
     background:linear-gradient(135deg,#0a1022 0%,#0b1635 50%,#0a1022 100%);
@@ -82,11 +82,8 @@
   }
   article.card:hover:after{opacity:1;animation:sweep 1.2s ease}
 
-  /* Imagen consistente + micro-zoom */
-  .snap{
-    width:100%;height:180px;display:flex;align-items:center;justify-content:center;
-    background:#0a1629;border:1px solid #223b60;border-radius:12px;margin-bottom:12px;padding:10px
-  }
+  .snap{width:100%;height:180px;display:flex;align-items:center;justify-content:center;
+    background:#0a1629;border:1px solid #223b60;border-radius:12px;margin-bottom:12px;padding:10px}
   .snap img{max-width:100%;max-height:100%;object-fit:contain;transition:transform .3s ease, filter .3s ease}
   .snap:hover img{transform:scale(1.03) translateY(-2px);filter:drop-shadow(0 6px 10px rgba(66,165,255,.18))}
 
@@ -116,15 +113,25 @@
   }
   .pill:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 10px 22px rgba(124,255,224,.25);filter:brightness(1.06)}
 
-  /* ===== Contacto compacto ===== */
+  /* ===== Contacto animado ===== */
   #contacto{padding:40px 16px}
-  .contact-lead{color:var(--muted);margin:4px 0 16px}
-  .contact-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));max-width:1000px;margin:0 auto}
+  .contact-lead{color:var(--muted);margin:4px 0 18px;text-align:center}
+  .contact-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));max-width:1000px;margin:0 auto}
   .contact-card{
-    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;transition:.3s;
-    display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;min-height:190px; /* alto reducido */
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;
+    display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;min-height:200px;
+    transition:transform .25s ease, box-shadow .3s ease, border-color .25s ease;
+    position:relative;overflow:hidden
   }
-  .contact-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.35)}
+  .contact-card:hover{
+    transform:translateY(-6px) scale(1.02);
+    border-color:#2b5ca9;box-shadow:0 16px 32px rgba(0,0,0,.4),0 0 24px rgba(66,165,255,.18)
+  }
+  .contact-card:after{
+    content:"";position:absolute;top:0;bottom:0;width:60px;transform:translateX(-120%);
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);opacity:0
+  }
+  .contact-card:hover:after{opacity:1;animation:sweep 1.2s ease}
   .contact-card h3{margin:0 0 6px;font-size:20px}
   .contact-card p{color:var(--muted);font-size:14px;margin:0 0 12px}
   .contact-card .btn{align-self:flex-start}
@@ -185,36 +192,33 @@
   <section id="proyectos">
     <h2 class="reveal d2">Proyectos</h2>
     <div class="grid cols-3">
-      <!-- 1 -->
       <article class="card reveal d3">
         <div class="snap"><img src="Imagenes/VPN.png" alt="Topología con VPN"></div>
         <div class="content">
           <h3>Seguridad en redes corporativas</h3>
           <p class="muted">Segmentación con VLANs, enrutamiento dinámico, ACLs, autenticación TACACS+, Syslog centralizado y túnel VPN.</p>
           <div class="actions">
-            <a class="btn" href="Ricardo%20C%C3%A1ceres%20-%20Prueba%20Soluciones%20de%20seguridad%20en%20redes%20corporativas.pkt" target="_blank" rel="noopener">Trabajos realizados</a>
+            <a class="btn" href="Ricardo%20C%C3%A1ceres%20-%20Prueba%20Soluciones%20de%20seguridad%20en%20redes%20corporativas.pkt" target="_blank">Trabajos realizados</a>
           </div>
         </div>
       </article>
-      <!-- 2 -->
       <article class="card reveal d4">
         <div class="snap"><img src="Imagenes/wireshark.png" alt="Wireshark"></div>
         <div class="content">
           <h3>Auditoría y hardening</h3>
           <p class="muted">Checklist de endurecimiento, registros centralizados y verificación con capturas y comandos.</p>
           <div class="actions">
-            <a class="btn" href="https://raw.githubusercontent.com/ricardocaceres1104-dot/Mi_portafolio/main/Informe_Testeo_Seguridad_Ricardo_Caceres.docx%20(2).pdf" target="_blank" rel="noopener">Trabajos realizados</a>
+            <a class="btn" href="https://raw.githubusercontent.com/ricardocaceres1104-dot/Mi_portafolio/main/Informe_Testeo_Seguridad_Ricardo_Caceres.docx%20(2).pdf" target="_blank">Trabajos realizados</a>
           </div>
         </div>
       </article>
-      <!-- 3 -->
       <article class="card reveal d5">
         <div class="snap"><img src="Imagenes/wazuh.png" alt="Wazuh"></div>
         <div class="content">
           <h3>Monitoreo y respuesta</h3>
           <p class="muted">Flujo básico de logging y alertas para visibilidad y reacción ante eventos.</p>
           <div class="actions">
-            <a class="btn" href="https://raw.githubusercontent.com/ricardocaceres1104-dot/Mi_portafolio/main/03._Desaf%C3%ADo_-_Detecci%C3%B3n_y_prevenci%C3%B3n_de_intrusiones.Ricardo_C%C3%A1ceres.pdf" target="_blank" rel="noopener">Trabajos realizados</a>
+            <a class="btn" href="https://raw.githubusercontent.com/ricardocaceres1104-dot/Mi_portafolio/main/03._Desaf%C3%ADo_-_Detecci%C3%B3n_y_prevenci%C3%B3n_de_intrusiones.Ricardo_C%C3%A1ceres.pdf" target="_blank">Trabajos realizados</a>
           </div>
         </div>
       </article>
@@ -232,36 +236,29 @@
     </div>
   </section>
 
-  <!-- CONTACTO (compacto) -->
+  <!-- CONTACTO -->
   <section id="contacto">
     <h2 class="reveal d2">Contacto</h2>
     <p class="contact-lead reveal d3">¿Coordinamos una conversación? Respondo rápido y me acomodo a tu disponibilidad.</p>
-
     <div class="contact-grid">
-      <!-- Email -->
       <div class="contact-card reveal d3">
         <h3>📧 Correo</h3>
         <p>Escríbeme directamente para propuestas técnicas o coordinación.</p>
         <a class="btn" href="mailto:ricardocaceres1104@gmail.com">Enviar correo</a>
       </div>
-      <!-- LinkedIn -->
       <div class="contact-card reveal d4">
         <h3>💼 LinkedIn</h3>
         <p>Conectemos y revisa mis actualizaciones profesionales.</p>
-        <a class="btn" href="https://www.linkedin.com/in/ricardo-andrés-cáceres-vera-506592193" target="_blank" rel="noopener">Ver perfil</a>
+        <a class="btn" href="https://www.linkedin.com/in/ricardo-andrés-cáceres-vera-506592193" target="_blank">Ver perfil</a>
       </div>
-      <!-- WhatsApp -->
       <div class="contact-card reveal d5">
         <h3>📱 WhatsApp</h3>
         <p>Mensajería rápida para coordinar o resolver dudas al toque.</p>
-        <a class="btn" href="https://wa.me/56979717936" target="_blank" rel="noopener">Escríbeme</a>
+        <a class="btn" href="https://wa.me/56979717936" target="_blank">Escríbeme</a>
       </div>
     </div>
   </section>
 
   <footer style="padding:36px 16px;border-top:1px solid var(--line);color:var(--muted);text-align:center">
-    © <span id="y"></span> Ricardo Cáceres Vera · Publicado con GitHub Pages
-  </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-</body>
-</html>
+    © <span
+
