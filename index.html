@@ -8,62 +8,105 @@
 <style>
   :root{
     --bg:#0c1220;--fg:#eaf2ff;--muted:#a8b3c9;--card:#111a2c;--line:#1b2a44;
-    --btn1:#154a96;--btn2:#0d3575; --pill:#0f1e35;
+    --btn1:#154a96;--btn2:#0d3575;
+    --pill:#0f1e35;--accent:#7cffe0;--glow:#42a5ff;
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:linear-gradient(180deg,#0a0f1c 0%,#0b1120 100%);color:var(--fg);font-family:Inter,system-ui,Segoe UI,Roboto,Arial}
-  a{color:#7cffe0;text-decoration:none}
-  a:hover{opacity:.9}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{opacity:.92}
 
+  /* Animaciones base */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+  @keyframes shimmer{from{background-position:0% 50%}to{background-position:200% 50%}}
+  @keyframes glowpulse{0%{box-shadow:0 0 0 rgba(66,165,255,0)}100%{box-shadow:0 0 22px rgba(124,255,224,.12)}}
+
+  .reveal{opacity:0;animation:fadeUp .8s ease forwards;animation-delay:var(--d,0s)}
+
+  /* NAV */
   header{position:sticky;top:0;z-index:50;border-bottom:1px solid #142036;background:rgba(10,15,28,.75);backdrop-filter:blur(10px)}
   nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
   .nav-links a{margin:0 10px;font-weight:600}
 
+  /* HERO */
   .hero{max-width:1100px;margin:0 auto;padding:56px 16px 18px;text-align:center}
-  .title{font-size:42px;line-height:1.1;margin:0}
+  .title{
+    font-size:42px;line-height:1.1;margin:0;
+    background:linear-gradient(90deg,#eaf2ff,#bfe3ff,#eaf2ff);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    background-size:200% 100%;animation:shimmer 8s linear infinite;
+  }
   .subtitle{font-size:18px;color:var(--muted);max-width:820px;margin:12px auto 0}
   .badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px}
-  .badge{background:#1a2644;padding:8px 12px;border-radius:999px;font-size:13px;border:1px solid #26446b}
+  .badge{
+    background:#1a2644;padding:8px 12px;border-radius:999px;font-size:13px;border:1px solid #26446b;
+    transition:transform .2s ease, box-shadow .2s ease
+  }
+  .badge:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(66,165,255,.18)}
 
+  /* TITULOS sección con subrayado animado */
   section{max-width:1100px;margin:0 auto;padding:28px 16px}
-  h2{font-size:28px;margin:0 0 14px;position:relative;display:inline-block}
-  h2:after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:linear-gradient(90deg,#42a5ff,transparent);opacity:.6}
+  h2{
+    font-size:28px;margin:0 0 14px;position:relative;display:inline-block;
+  }
+  h2:after{
+    content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;
+    background:linear-gradient(90deg,#42a5ff,#7cffe0,#42a5ff);
+    background-size:200% 100%;animation:shimmer 5s linear infinite;opacity:.8
+  }
 
+  /* GRID */
   .grid{display:grid;gap:16px}
   @media(min-width:900px){ .grid.cols-3{grid-template-columns:repeat(3,1fr)} .grid.cols-2{grid-template-columns:repeat(2,1fr)} }
 
-  /* Tarjetas sólidas y parejitas */
+  /* CARD */
   article.card{
     background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;
     display:flex;flex-direction:column;min-height:460px;transition:.25s;
+    animation:glowpulse 3s ease-in-out infinite alternate;
   }
-  article.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.28)}
+  article.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.35),0 0 20px rgba(66,165,255,.15)}
 
-  /* Imagen uniforme */
+  /* Imagen consistente */
   .snap{
     width:100%;height:180px;display:flex;align-items:center;justify-content:center;
     background:#0a1629;border:1px solid #223b60;border-radius:12px;margin-bottom:12px;padding:10px;
+    transition:transform .25s ease
   }
+  .snap:hover{transform:scale(1.01)}
   .snap img{max-width:100%;max-height:100%;object-fit:contain}
 
   .content{display:flex;flex-direction:column;gap:10px;flex:1}
   .muted{color:var(--muted);font-size:14px}
+
+  /* Botones iguales y abajo */
   .actions{margin-top:auto}
-
-  /* Botón azul oscuro */
   .btn{
-    display:inline-block;padding:12px 18px;border-radius:12px;font-weight:700;border:none;
-    background:linear-gradient(135deg,var(--btn1),var(--btn2));color:#fff;transition:all .25s ease;
+    position:relative;display:inline-block;padding:12px 18px;border-radius:12px;font-weight:700;border:none;
+    background:linear-gradient(135deg,var(--btn1),var(--btn2));color:#fff;transition:transform .25s ease, box-shadow .25s ease, filter .25s ease
   }
-  .btn:hover{transform:translateY(-2px);background:linear-gradient(135deg,#0d3575,#092654);box-shadow:0 6px 20px rgba(0,0,0,.35)}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.35);filter:brightness(1.05)}
+  .btn:after{
+    content:"";position:absolute;inset:-2px;border-radius:14px;
+    background:linear-gradient(135deg,rgba(66,165,255,.35),rgba(124,255,224,.25));
+    opacity:0;transition:opacity .25s ease;filter:blur(8px);z-index:-1
+  }
+  .btn:hover:after{opacity:1}
 
-  /* Pills de skills (sin JS) */
+  /* Pills de skills con micro-animación */
   .pills{display:flex;flex-wrap:wrap;gap:10px}
-  .pill{background:var(--pill);border:1px solid #244268;color:#cfe6ff;border-radius:999px;padding:8px 12px;font-size:13px}
+  .pill{
+    background:var(--pill);border:1px solid #244268;color:#cfe6ff;border-radius:999px;padding:8px 12px;font-size:13px;
+    transition:transform .15s ease, box-shadow .2s ease
+  }
+  .pill:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(124,255,224,.18)}
+
+  /* Utilidades de delay para reveal */
+  .d1{--d:.05s}.d2{--d:.12s}.d3{--d:.18s}.d4{--d:.24s}.d5{--d:.30s}.d6{--d:.36s}
 </style>
 </head>
 <body>
-  <header>
+  <header class="reveal">
     <nav>
       <div><strong>Ricardo Cáceres Vera</strong></div>
       <div class="nav-links">
@@ -76,22 +119,22 @@
     </nav>
   </header>
 
-  <div class="hero">
+  <div class="hero reveal d1">
     <h1 class="title">Ingeniero en Conectividad y Redes</h1>
     <p class="subtitle">
       Experiencia en ISP, telecomunicaciones y ciberseguridad. Trabajo con <b>VLANs</b>, <b>OSPF/EIGRP/BGP</b>, 
       <b>ACLs</b>, autenticación <b>TACACS+</b>, monitoreo <b>Syslog</b> y <b>túneles VPN (IPsec)</b>. 
       Manejo de <b>Kali Linux</b>, <b>Wireshark</b> y <b>Nmap</b>.
     </p>
-    <div class="badges">
+    <div class="badges d2">
       <span class="badge">#Redes</span><span class="badge">#Ciberseguridad</span><span class="badge">#ISP</span>
       <span class="badge">#Linux</span><span class="badge">#Cisco</span><span class="badge">#Wireshark</span>
     </div>
   </div>
 
   <section id="skills">
-    <h2>Skills técnicos</h2>
-    <div class="card">
+    <h2 class="reveal d2">Skills técnicos</h2>
+    <div class="card reveal d3" style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px">
       <div class="pills">
         <span class="pill">VLANs / Inter-VLAN</span>
         <span class="pill">OSPF / EIGRP / BGP</span>
@@ -110,11 +153,11 @@
   </section>
 
   <section id="proyectos">
-    <h2>Proyectos</h2>
+    <h2 class="reveal d2">Proyectos</h2>
     <div class="grid cols-3">
 
       <!-- Proyecto 1 -->
-      <article class="card">
+      <article class="card reveal d3">
         <div class="snap"><img src="Imagenes/VPN.png" alt="Topología con VPN"></div>
         <div class="content">
           <h3>Seguridad en redes corporativas</h3>
@@ -128,7 +171,7 @@
       </article>
 
       <!-- Proyecto 2 -->
-      <article class="card">
+      <article class="card reveal d4">
         <div class="snap"><img src="Imagenes/wireshark.png" alt="Wireshark"></div>
         <div class="content">
           <h3>Auditoría y hardening</h3>
@@ -142,7 +185,7 @@
       </article>
 
       <!-- Proyecto 3 -->
-      <article class="card">
+      <article class="card reveal d5">
         <div class="snap"><img src="Imagenes/wazuh.png" alt="Wazuh"></div>
         <div class="content">
           <h3>Monitoreo y respuesta</h3>
@@ -159,8 +202,8 @@
   </section>
 
   <section id="soft">
-    <h2>Habilidades blandas</h2>
-    <div class="card">
+    <h2 class="reveal d2">Habilidades blandas</h2>
+    <div class="card reveal d3" style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px">
       <p class="muted">
         Comunicación efectiva · Trabajo en equipo · Liderazgo situacional · Resolución de problemas ·
         Proactividad · Adaptabilidad · Orientación a resultados y al cliente interno/externo.
@@ -169,8 +212,8 @@
   </section>
 
   <section id="contacto">
-    <h2>Contacto</h2>
-    <div class="card">
+    <h2 class="reveal d2">Contacto</h2>
+    <div class="card reveal d3" style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px">
       <p class="muted">¿Coordinamos una conversación? Respondo rápido.</p>
       <p class="muted">
         📧 ricardocaceres1104@gmail.com<br>
@@ -187,4 +230,5 @@
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
+
 
