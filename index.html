@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ricardo Cáceres Vera | Portafolio</title>
 <meta name="description" content="Ingeniero en Conectividad y Redes. Experiencia en ISP, telecomunicaciones y ciberseguridad: VLANs, OSPF/EIGRP/BGP, ACLs, TACACS+, Syslog, VPNs, Kali, Wireshark.">
-<!-- Preview social (opcional, si subiste images/preview.png) -->
+<!-- Preview social -->
 <meta property="og:title" content="Ricardo Cáceres Vera | Portafolio">
 <meta property="og:description" content="Ingeniero en Conectividad y Redes. VLANs, OSPF/EIGRP/BGP, ACLs, TACACS+, Syslog y VPNs.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ricardocaceres1104-dot.github.io/Mi_portafolio/">
-<meta property="og:image" content="https://ricardocaceres1104-dot.github.io/Mi_portafolio/images/preview.png">
+<meta property="og:image" content="https://ricardocaceres1104-dot.github.io/Mi_portafolio/Imagenes/banner.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ricardo Cáceres Vera | Portafolio">
 <meta name="twitter:description" content="Ingeniero en Conectividad y Redes. VLANs, OSPF/EIGRP/BGP, ACLs, TACACS+, Syslog y VPNs.">
-<meta name="twitter:image" content="https://ricardocaceres1104-dot.github.io/Mi_portafolio/images/preview.png">
+<meta name="twitter:image" content="https://ricardocaceres1104-dot.github.io/Mi_portafolio/Imagenes/banner.png">
 <style>
   :root{
     --bg:#0c1220;--fg:#eaf2ff;--muted:#a8b3c9;--card:#111a2c;--line:#1b2a44;
@@ -27,12 +27,12 @@
   header{position:sticky;top:0;z-index:50;border-bottom:1px solid #142036;background:rgba(10,15,28,.7);backdrop-filter:saturate(160%) blur(8px)}
   nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
   .nav-links a{margin:0 10px;font-weight:600}
-  .hero{max-width:1100px;margin:0 auto;padding:64px 16px 24px;display:grid;gap:18px}
+  .hero{max-width:1100px;margin:0 auto;padding:64px 16px 24px;display:grid;gap:18px;text-align:center}
   .title{font-size:42px;line-height:1.1;margin:0}
-  .subtitle{font-size:18px;color:var(--muted);max-width:800px;margin-top:4px}
-  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+  .subtitle{font-size:18px;color:var(--muted);max-width:800px;margin:10px auto 0}
+  .badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:10px}
   .badge{background:linear-gradient(135deg,#163056,#0f203a);border:1px solid #26446b;padding:8px 12px;border-radius:999px;font-size:13px}
-  .cta-row{display:flex;gap:12px;margin-top:16px}
+  .cta-row{display:flex;gap:12px;justify-content:center;margin-top:16px}
   .btn{display:inline-block;padding:12px 16px;border-radius:12px;font-weight:700;border:1px solid #1d3557;background:linear-gradient(135deg,var(--grad1),var(--grad2));color:#00131a}
   .btn.ghost{background:transparent;color:var(--fg);border:1px solid #254368}
   section{max-width:1100px;margin:0 auto;padding:28px 16px}
@@ -76,6 +76,12 @@
     </nav>
   </header>
 
+  <!-- Banner -->
+  <section id="banner">
+    <img src="Imagenes/banner.png" alt="Ricardo Cáceres Vera - Ingeniero en Conectividad y Redes" 
+         style="width:100%;border-radius:12px;border:1px solid #223b60;margin:20px 0">
+  </section>
+
   <div class="hero">
     <h1 class="title ring">Ingeniero en Conectividad y Redes</h1>
     <p class="subtitle">
@@ -110,11 +116,11 @@
     <div class="card">
       <div>
         <span class="pill">VLANs / Inter-VLAN</span>
-        <span class="pill">OSPF / EIGRP / BGP (base)</span>
+        <span class="pill">OSPF / EIGRP / BGP</span>
         <span class="pill">ACLs (L3/L4)</span>
         <span class="pill">TACACS+</span>
         <span class="pill">Syslog centralizado</span>
-        <span class="pill">VPN IPsec (site-to-site)</span>
+        <span class="pill">VPN IPsec</span>
         <span class="pill">DHCP / NAT</span>
         <span class="pill">Kali Linux</span>
         <span class="pill">Nmap</span>
@@ -148,7 +154,7 @@
       </article>
 
       <article class="card">
-        <img src="Imagenes/nmap.png" alt="Resultado Nmap" style="width:100%;border-radius:12px;border:1px solid #223b60">
+        <img src="Imagenes/Nmap.png" alt="Resultado Nmap" style="width:100%;border-radius:12px;border:1px solid #223b60">
         <h3>Monitoreo y respuesta</h3>
         <p class="muted">
           Flujo básico de logging y alertas para visibilidad y reacción ante eventos.
@@ -213,7 +219,6 @@
       <p class="muted">¿Coordinamos una conversación? Respondo rápido.</p>
       <p class="muted" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
         <span class="pill">📧 ricardocaceres1104@gmail.com</span>
-
         <!-- Botón WhatsApp con icono SVG -->
         <a class="pill" href="https://wa.me/56979717936" target="_blank" rel="noopener" title="WhatsApp">
           <span style="display:inline-flex;align-items:center;gap:6px">
@@ -224,7 +229,6 @@
             +56 9 7971 7936
           </span>
         </a>
-
         <a class="pill" href="https://github.com/ricardocaceres1104-dot" target="_blank" rel="noopener">GitHub</a>
         <a class="pill" href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
       </p>
@@ -237,3 +241,4 @@
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
+
