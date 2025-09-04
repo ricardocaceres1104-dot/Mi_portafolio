@@ -4,61 +4,71 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ricardo Cáceres Vera | Portafolio</title>
-<meta name="description" content="Ingeniero en Conectividad y Redes. Experiencia en ISP, telecomunicaciones y ciberseguridad: VLANs, OSPF/EIGRP/BGP, ACLs, TACACS+, Syslog, VPNs, Kali, Wireshark.">
+<meta name="description" content="Ingeniero en Conectividad y Redes con experiencia en ISP, telecomunicaciones y ciberseguridad.">
 <style>
   :root{
     --bg:#0c1220;--fg:#eaf2ff;--muted:#a8b3c9;--card:#111a2c;--line:#1b2a44;
-    --grad1:#1976d2;--grad2:#0d47a1;--accent:#00e5ff;--pill:#0f1e35;
+    --b1:#154a96;--b2:#0d3575;
+    --pill:#0f1e35;--accent:#00e5ff;
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:linear-gradient(180deg,#0a0f1c 0%,#0b1120 100%);color:var(--fg);font-family:Inter,system-ui,Segoe UI,Roboto,Arial}
-  a{color:var(--grad2);text-decoration:none}
+  a{color:#7cffe0;text-decoration:none}
   a:hover{opacity:.9}
 
-  header{position:sticky;top:0;z-index:50;border-bottom:1px solid #142036;background:rgba(10,15,28,.7);backdrop-filter:saturate(160%) blur(8px)}
-  nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
+  header{position:sticky;top:0;z-index:50;border-bottom:1px solid #142036;background:rgba(10,15,28,.75);backdrop-filter:blur(10px)}
+  nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
   .nav-links a{margin:0 10px;font-weight:600}
-  .hero{max-width:1100px;margin:0 auto;padding:64px 16px 24px;display:grid;gap:18px;text-align:center}
+
+  .hero{max-width:1100px;margin:0 auto;padding:60px 16px 30px;text-align:center}
   .title{font-size:42px;line-height:1.1;margin:0}
-  .subtitle{font-size:18px;color:var(--muted);max-width:800px;margin:10px auto 0}
-  .badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:10px}
-  .badge{background:linear-gradient(135deg,#163056,#0f203a);border:1px solid #26446b;padding:8px 12px;border-radius:999px;font-size:13px}
-  .cta-row{display:flex;gap:12px;justify-content:center;margin-top:16px}
+  .subtitle{font-size:18px;color:var(--muted);max-width:820px;margin:14px auto 0}
+  .badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px}
+  .badge{background:#1a2644;padding:8px 12px;border-radius:999px;font-size:13px;border:1px solid #26446b}
+
   .btn{
-    display:inline-block;
-    padding:12px 18px;
-    border-radius:12px;
-    font-weight:700;
-    border:none;
-    background:linear-gradient(135deg,var(--grad1),var(--grad2));
-    color:#fff;
-    transition:all .25s ease;
+    display:inline-block;padding:12px 18px;border-radius:12px;font-weight:700;
+    background:linear-gradient(135deg,var(--b1),var(--b2));color:#fff;transition:all .25s ease;
   }
-  .btn:hover{
-    transform:translateY(-2px);
-    background:linear-gradient(135deg,#0d47a1,#0b3c91);
-    box-shadow:0 6px 20px rgba(0,0,0,.3);
-  }
-  section{max-width:1100px;margin:0 auto;padding:28px 16px}
-  h2{font-size:28px;margin:0 0 12px}
+  .btn:hover{transform:translateY(-2px);background:linear-gradient(135deg,#0d3575,#092654);box-shadow:0 6px 20px rgba(0,0,0,.35)}
+
+  section{max-width:1100px;margin:0 auto;padding:40px 16px}
+  h2{font-size:28px;margin:0 0 20px;position:relative;display:inline-block}
+  h2:after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:linear-gradient(90deg,#42a5ff,transparent);opacity:.6}
+
   .grid{display:grid;gap:16px}
   @media(min-width:900px){ .grid.cols-3{grid-template-columns:repeat(3,1fr)} .grid.cols-2{grid-template-columns:repeat(2,1fr)} }
-  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;transition:.2s;box-shadow:0 0 0 rgba(0,0,0,0)}
-  .card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.25)}
-  .muted{color:var(--muted);font-size:14px}
-  .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--pill);border:1px solid #244268;font-size:12px;margin:4px 6px 0 0}
-  footer{padding:40px 16px;border-top:1px solid var(--line);color:var(--muted);text-align:center;margin-top:28px}
 
-  /* imágenes uniformes en Proyectos */
-  .card img{
-    width:100%;
-    height:180px;
-    object-fit:contain;
-    background-color:#0a1629;
-    border-radius:12px;
-    border:1px solid #223b60;
-    padding:10px;
+  article.card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;
+    display:flex;flex-direction:column;min-height:470px;transition:.25s;
   }
+  article.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.28)}
+
+  .card .snap{width:100%;height:180px;display:flex;align-items:center;justify-content:center;background:#0a1629;border:1px solid #223b60;border-radius:12px;margin-bottom:12px}
+  .card .snap img{max-width:100%;max-height:100%;object-fit:contain}
+  .content{display:flex;flex-direction:column;gap:10px;flex:1}
+  .muted{color:var(--muted);font-size:14px}
+  .actions{margin-top:auto}
+
+  /* Skills con barras */
+  .skill{margin:12px 0}
+  .skill-name{margin:0 0 6px;font-size:15px}
+  .bar{background:#1c2942;border-radius:8px;overflow:hidden;height:10px}
+  .bar span{display:block;height:100%;background:linear-gradient(90deg,#2196f3,#00e5ff);width:0%;transition:width 1.2s ease}
+
+  /* Timeline */
+  .timeline{border-left:2px solid #2c3e50;margin-left:20px;padding-left:20px}
+  .timeline-item{margin-bottom:20px;position:relative}
+  .timeline-item:before{content:"";position:absolute;left:-11px;top:4px;width:12px;height:12px;border-radius:50%;background:#42a5ff}
+  .timeline-item h3{margin:0;font-size:16px;color:#fff}
+  .timeline-item span{font-size:13px;color:var(--muted)}
+  .timeline-item p{margin:6px 0 0;color:var(--muted)}
+
+  footer{padding:30px 16px;border-top:1px solid var(--line);color:var(--muted);text-align:center;margin-top:28px}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
+  .reveal.show{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
@@ -69,20 +79,19 @@
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#skills">Skills</a>
         <a href="#proyectos">Proyectos</a>
-        <a href="#soft">Habilidades blandas</a>
-        <a href="#certs">Cursos</a>
         <a href="#experiencia">Experiencia</a>
+        <a href="#soft">Habilidades blandas</a>
         <a href="#contacto">Contacto</a>
       </div>
     </nav>
   </header>
 
-  <div class="hero">
+  <div class="hero reveal">
     <h1 class="title">Ingeniero en Conectividad y Redes</h1>
     <p class="subtitle">
       Experiencia en ISP, telecomunicaciones y ciberseguridad. Trabajo con <b>VLANs</b>, <b>OSPF/EIGRP/BGP</b>, 
       <b>ACLs</b>, autenticación <b>TACACS+</b>, monitoreo <b>Syslog</b> y <b>túneles VPN (IPsec)</b>. 
-      Manejo de <b>Kali Linux</b>, <b>Wireshark</b> y <b>Nmap</b> para pruebas y documentación técnica.
+      Manejo de <b>Kali Linux</b>, <b>Wireshark</b> y <b>Nmap</b>.
     </p>
     <div class="badges">
       <span class="badge">#Redes</span><span class="badge">#Ciberseguridad</span><span class="badge">#ISP</span>
@@ -90,83 +99,106 @@
     </div>
   </div>
 
+  <section id="skills">
+    <h2 class="reveal">Skills técnicos</h2>
+    <div class="card reveal">
+      <div class="skill">
+        <p class="skill-name">Redes y protocolos</p>
+        <div class="bar"><span style="width:90%"></span></div>
+      </div>
+      <div class="skill">
+        <p class="skill-name">Ciberseguridad</p>
+        <div class="bar"><span style="width:80%"></span></div>
+      </div>
+      <div class="skill">
+        <p class="skill-name">Linux / Kali</p>
+        <div class="bar"><span style="width:75%"></span></div>
+      </div>
+      <div class="skill">
+        <p class="skill-name">Documentación técnica</p>
+        <div class="bar"><span style="width:95%"></span></div>
+      </div>
+    </div>
+  </section>
+
   <section id="proyectos">
-    <h2>Proyectos</h2>
+    <h2 class="reveal">Proyectos</h2>
     <div class="grid cols-3">
-
-      <!-- Proyecto 1 -->
-      <article class="card">
-        <img src="Imagenes/VPN.png" alt="Topología con VPN">
-        <h3>Seguridad en redes corporativas</h3>
-        <p class="muted">
-          Segmentación con <b>VLANs</b>, enrutamiento dinámico, <b>ACLs</b> de control, autenticación <b>TACACS+</b>, 
-          <b>Syslog</b> centralizado y <b>túnel VPN</b> cifrado entre sedes.
-        </p>
-        <p>
-          <a class="btn"
-             href="Ricardo%20C%C3%A1ceres%20-%20Prueba%20Soluciones%20de%20seguridad%20en%20redes%20corporativas.pkt"
-             target="_blank" rel="noopener">Trabajos realizados</a>
-        </p>
+      <article class="card reveal">
+        <div class="snap"><img src="Imagenes/VPN.png" alt="Topología con VPN"></div>
+        <div class="content">
+          <h3>Seguridad en redes corporativas</h3>
+          <p class="muted">Segmentación con VLANs, enrutamiento dinámico, ACLs, TACACS+, Syslog centralizado y túnel VPN.</p>
+          <div class="actions">
+            <a class="btn" href="Ricardo%20C%C3%A1ceres%20-%20Prueba%20Soluciones%20de%20seguridad%20en%20redes%20corporativas.pkt" target="_blank">Trabajos realizados</a>
+          </div>
+        </div>
       </article>
-
-      <!-- Proyecto 2 -->
-      <article class="card">
-        <img src="Imagenes/wireshark.png" alt="Captura Wireshark">
-        <h3>Auditoría y hardening</h3>
-        <p class="muted">
-          Checklist de endurecimiento, registros centralizados y verificación con capturas y comandos.
-        </p>
-        <p>
-          <a class="btn"
-             href="https://raw.githubusercontent.com/ricardocaceres1104-dot/Mi_portafolio/main/Informe_Testeo_Seguridad_Ricardo_Caceres.docx%20(2).pdf"
-             target="_blank" rel="noopener">Trabajos realizados</a>
-        </p>
+      <article class="card reveal">
+        <div class="snap"><img src="Imagenes/wireshark.png" alt="Wireshark"></div>
+        <div class="content">
+          <h3>Auditoría y hardening</h3>
+          <p class="muted">Checklist de endurecimiento, registros centralizados y verificación con capturas.</p>
+          <div class="actions">
+            <a class="btn" href="Informe_Testeo_Seguridad_Ricardo_Caceres.docx%20(2).pdf" target="_blank">Trabajos realizados</a>
+          </div>
+        </div>
       </article>
-
-      <!-- Proyecto 3 -->
-      <article class="card">
-        <img src="Imagenes/wazuh.png" alt="Monitoreo con Wazuh">
-        <h3>Monitoreo y respuesta</h3>
-        <p class="muted">
-          Flujo básico de logging y alertas para visibilidad y reacción ante eventos.
-        </p>
-        <p>
-          <a class="btn"
-             href="https://raw.githubusercontent.com/ricardocaceres1104-dot/Mi_portafolio/main/03._Desaf%C3%ADo_-_Detecci%C3%B3n_y_prevenci%C3%B3n_de_intrusiones.Ricardo_C%C3%A1ceres.pdf"
-             target="_blank" rel="noopener">Trabajos realizados</a>
-        </p>
+      <article class="card reveal">
+        <div class="snap"><img src="Imagenes/wazuh.png" alt="Wazuh"></div>
+        <div class="content">
+          <h3>Monitoreo y respuesta</h3>
+          <p class="muted">Flujo básico de logging y alertas para visibilidad y reacción ante eventos.</p>
+          <div class="actions">
+            <a class="btn" href="03._Desaf%C3%ADo_-_Detecci%C3%B3n_y_prevenci%C3%B3n_de_intrusiones.Ricardo_C%C3%A1ceres.pdf" target="_blank">Trabajos realizados</a>
+          </div>
+        </div>
       </article>
+    </div>
+  </section>
 
+  <section id="experiencia">
+    <h2 class="reveal">Experiencia</h2>
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <h3>BitRed (ISP)</h3><span>2019 - Actualidad</span>
+        <p>Soporte, operación y modernización de redes. Carga de firmware, pruebas y documentación de fallas.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Duoc UC</h3><span>2018 - 2024</span>
+        <p>Proyectos académicos en VLANs, OSPF, seguridad perimetral, Syslog y VPNs. Desarrollo de portafolio de título.</p>
+      </div>
     </div>
   </section>
 
   <section id="soft">
-    <h2>Habilidades blandas</h2>
-    <div class="card">
-      <p class="muted">
-        Comunicación efectiva y trabajo en equipo · Proactividad y aprendizaje continuo · 
-        Orientación a resultados y mejora constante · Adaptabilidad y gestión del tiempo ·
-        Liderazgo situacional y enfoque en el cliente interno/externo · Resolución de problemas técnicos con claridad y calma.
-      </p>
+    <h2 class="reveal">Habilidades blandas</h2>
+    <div class="card reveal">
+      <p class="muted">Comunicación efectiva · Trabajo en equipo · Liderazgo situacional · Resolución de problemas · Adaptabilidad · Proactividad · Orientación a resultados.</p>
     </div>
   </section>
 
   <section id="contacto">
-    <h2>Contacto</h2>
-    <div class="card">
-      <p class="muted">¿Coordinamos una conversación? Respondo rápido.</p>
-      <p class="muted">
-        📧 ricardocaceres1104@gmail.com<br>
-        📱 <a href="https://wa.me/56979717936" target="_blank" rel="noopener">WhatsApp: +56 9 7971 7936</a><br>
-        🌐 <a href="https://github.com/ricardocaceres1104-dot" target="_blank" rel="noopener">GitHub</a><br>
-        💼 <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-      </p>
+    <h2 class="reveal">Contacto</h2>
+    <div class="card reveal">
+      <p class="muted">📧 ricardocaceres1104@gmail.com<br>
+      📱 <a href="https://wa.me/56979717936" target="_blank">WhatsApp: +56 9 7971 7936</a><br>
+      🌐 <a href="https://github.com/ricardocaceres1104-dot" target="_blank">GitHub</a><br>
+      💼 <a href="https://linkedin.com" target="_blank">LinkedIn</a></p>
     </div>
   </section>
 
-  <footer>
-    © <span id="y"></span> Ricardo Cáceres Vera · Publicado con GitHub Pages
-  </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  <footer>© <span id="y"></span> Ricardo Cáceres Vera · Publicado con GitHub Pages</footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});},{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    // animar barras
+    const bars=document.querySelectorAll('.bar span');
+    const io2=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.width=e.target.getAttribute('style').match(/width:\s*(\d+%)/)[1];io2.unobserve(e.target);}});},{threshold:.3});
+    bars.forEach(b=>io2.observe(b));
+  </script>
 </body>
 </html>
+
