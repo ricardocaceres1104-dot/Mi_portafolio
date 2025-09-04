@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ricardo Cáceres Vera | Portafolio</title>
 <meta name="description" content="Ingeniero en Conectividad y Redes. Experiencia en ISP, telecomunicaciones y ciberseguridad: VLANs, OSPF/EIGRP/BGP, ACLs, TACACS+, Syslog, VPNs, Kali, Wireshark.">
+<!-- Preview social (opcional, si subiste images/preview.png) -->
 <meta property="og:title" content="Ricardo Cáceres Vera | Portafolio">
 <meta property="og:description" content="Ingeniero en Conectividad y Redes. VLANs, OSPF/EIGRP/BGP, ACLs, TACACS+, Syslog y VPNs.">
 <meta property="og:type" content="website">
@@ -67,6 +68,7 @@
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#skills">Skills</a>
         <a href="#proyectos">Proyectos</a>
+        <a href="#soft">Habilidades blandas</a>
         <a href="#certs">Cursos</a>
         <a href="#experiencia">Experiencia</a>
         <a href="#contacto">Contacto</a>
@@ -95,10 +97,10 @@
     <h2>Sobre mí</h2>
     <div class="card">
       <p class="muted">
-        Soy <b>Ricardo Cáceres Vera</b>, Ingeniero en Conectividad y Redes titulado (Duoc UC). 
+        Soy <b>Ricardo Cáceres Vera</b>, Ingeniero en Conectividad y Redes titulado (Duoc UC).
         Me enfoco en diseño, implementación y aseguramiento de redes corporativas. 
-        Disfruto documentar con claridad (diagramas, CLI y capturas) y aplicar buenas prácticas para 
-        construir infraestructuras seguras, estables y escalables.
+        Documentación clara (diagramas, CLI y capturas) y aplicación de buenas prácticas para 
+        infraestructuras seguras, estables y escalables.
       </p>
     </div>
   </section>
@@ -127,7 +129,7 @@
     <h2>Proyectos</h2>
     <div class="grid cols-3">
       <article class="card">
-        <img src="images/VPN.png" alt="Topología con VPN" style="width:100%;border-radius:12px;border:1px solid #223b60">
+        <img src="Imagenes/VPN.png" alt="Topología con VPN" style="width:100%;border-radius:12px;border:1px solid #223b60">
         <h3>Seguridad en redes corporativas</h3>
         <p class="muted">
           Segmentación con <b>VLANs</b>, enrutamiento dinámico, <b>ACLs</b> de control, autenticación <b>TACACS+</b>, 
@@ -137,7 +139,7 @@
       </article>
 
       <article class="card">
-        <img src="images/wireshark.png" alt="Captura Wireshark" style="width:100%;border-radius:12px;border:1px solid #223b60">
+        <img src="Imagenes/wireshark.png" alt="Captura Wireshark" style="width:100%;border-radius:12px;border:1px solid #223b60">
         <h3>Auditoría y hardening</h3>
         <p class="muted">
           Checklist de endurecimiento, registros centralizados y verificación con capturas y comandos.
@@ -146,13 +148,32 @@
       </article>
 
       <article class="card">
-        <img src="images/nmap.png" alt="Resultado Nmap" style="width:100%;border-radius:12px;border:1px solid #223b60">
+        <img src="Imagenes/nmap.png" alt="Resultado Nmap" style="width:100%;border-radius:12px;border:1px solid #223b60">
         <h3>Monitoreo y respuesta</h3>
         <p class="muted">
           Flujo básico de logging y alertas para visibilidad y reacción ante eventos.
         </p>
         <p><a class="btn ghost" href="#" target="_blank" rel="noopener">Repo / Demo</a></p>
       </article>
+    </div>
+  </section>
+
+  <section id="soft">
+    <h2>Habilidades blandas</h2>
+    <div class="card">
+      <p class="muted">
+        Comunicación efectiva y trabajo en equipo · Proactividad y aprendizaje continuo · 
+        Orientación a resultados y mejora constante · Adaptabilidad y gestión del tiempo ·
+        Liderazgo situacional y enfoque en el cliente interno/externo · Resolución de problemas técnicos con claridad y calma.
+      </p>
+      <div style="margin-top:8px">
+        <span class="pill">Trabajo en equipo</span>
+        <span class="pill">Comunicación clara</span>
+        <span class="pill">Resolución de problemas</span>
+        <span class="pill">Proactividad</span>
+        <span class="pill">Gestión del tiempo</span>
+        <span class="pill">Orientación al servicio</span>
+      </div>
     </div>
   </section>
 
@@ -190,9 +211,20 @@
     <h2>Contacto</h2>
     <div class="card">
       <p class="muted">¿Coordinamos una conversación? Respondo rápido.</p>
-      <p>
+      <p class="muted" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
         <span class="pill">📧 ricardocaceres1104@gmail.com</span>
-        <span class="pill">📱 WhatsApp: <a href="https://wa.me/56979717936" target="_blank" rel="noopener">+56 9 7971 7936</a></span>
+
+        <!-- Botón WhatsApp con icono SVG -->
+        <a class="pill" href="https://wa.me/56979717936" target="_blank" rel="noopener" title="WhatsApp">
+          <span style="display:inline-flex;align-items:center;gap:6px">
+            <svg width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path fill="#25D366" d="M.5 31.5 3.1 23A14 14 0 1 1 23 28.9L14.5 31.5 0.5 31.5z"/>
+              <path fill="#fff" d="M22.4 19.2c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6 0-.3-.2-1.1-.4-2.1-1.3-.8-.7-1.3-1.6-1.5-1.9-.2-.3 0-.4.2-.6.2-.2.3-.3.4-.5.2-.2.2-.3.3-.5 0-.2 0-.4 0-.6 0-.2-.7-1.8-1-2.5-.3-.7-.5-.6-.7-.6h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 3s1.2 3.5 1.4 3.7c.2.2 2.3 3.5 5.5 4.8.8.3 1.4.5 1.9.6.8.3 1.6.2 2.2.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.6.2-1.7-.1-.1-.3-.2-.6-.4z"/>
+            </svg>
+            +56 9 7971 7936
+          </span>
+        </a>
+
         <a class="pill" href="https://github.com/ricardocaceres1104-dot" target="_blank" rel="noopener">GitHub</a>
         <a class="pill" href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
       </p>
