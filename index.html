@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ricardo Cáceres Vera | Portafolio</title>
 <meta name="description" content="Ingeniero en Conectividad y Redes. Experiencia en ISP, telecomunicaciones y ciberseguridad: VLANs, OSPF/EIGRP/BGP, ACLs, TACACS+, Syslog, VPNs, Kali, Wireshark.">
+<meta property="og:title" content="Ricardo Cáceres Vera | Portafolio">
+<meta property="og:description" content="Ingeniero en Conectividad y Redes. VLANs, OSPF/EIGRP/BGP, ACLs, TACACS+, Syslog y VPNs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ricardocaceres1104-dot.github.io/Mi_portafolio/">
+<meta property="og:image" content="https://ricardocaceres1104-dot.github.io/Mi_portafolio/images/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ricardo Cáceres Vera | Portafolio">
+<meta name="twitter:description" content="Ingeniero en Conectividad y Redes. VLANs, OSPF/EIGRP/BGP, ACLs, TACACS+, Syslog y VPNs.">
+<meta name="twitter:image" content="https://ricardocaceres1104-dot.github.io/Mi_portafolio/images/preview.png">
 <style>
   :root{
     --bg:#0c1220;--fg:#eaf2ff;--muted:#a8b3c9;--card:#111a2c;--line:#1b2a44;
@@ -14,11 +23,9 @@
   html,body{margin:0;background:linear-gradient(180deg,#0a0f1c 0%,#0b1120 100%);color:var(--fg);font-family:Inter,system-ui,Segoe UI,Roboto,Arial}
   a{color:var(--grad2);text-decoration:none}
   a:hover{opacity:.9}
-  /* NAV */
   header{position:sticky;top:0;z-index:50;border-bottom:1px solid #142036;background:rgba(10,15,28,.7);backdrop-filter:saturate(160%) blur(8px)}
   nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
   .nav-links a{margin:0 10px;font-weight:600}
-  /* HERO */
   .hero{max-width:1100px;margin:0 auto;padding:64px 16px 24px;display:grid;gap:18px}
   .title{font-size:42px;line-height:1.1;margin:0}
   .subtitle{font-size:18px;color:var(--muted);max-width:800px;margin-top:4px}
@@ -27,7 +34,6 @@
   .cta-row{display:flex;gap:12px;margin-top:16px}
   .btn{display:inline-block;padding:12px 16px;border-radius:12px;font-weight:700;border:1px solid #1d3557;background:linear-gradient(135deg,var(--grad1),var(--grad2));color:#00131a}
   .btn.ghost{background:transparent;color:var(--fg);border:1px solid #254368}
-  /* SECTIONS */
   section{max-width:1100px;margin:0 auto;padding:28px 16px}
   h2{font-size:28px;margin:0 0 12px}
   .grid{display:grid;gap:16px}
@@ -36,16 +42,12 @@
   .card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.25)}
   .muted{color:var(--muted);font-size:14px}
   .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--pill);border:1px solid #244268;font-size:12px;margin:4px 6px 0 0}
-  .snap{aspect-ratio:16/9;background:radial-gradient(1200px 200px at 0% 0%,rgba(66,165,255,.25),transparent),#0a1629;border:1px solid #223b60;border-radius:12px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;color:#7ecbff;font-size:13px}
   footer{padding:40px 16px;border-top:1px solid var(--line);color:var(--muted);text-align:center;margin-top:28px}
-  /* Anim */
   @keyframes glow{0%{box-shadow:0 0 0 rgba(0,0,0,0)}100%{box-shadow:0 0 40px rgba(124,255,224,.12)}}
   .ring{position:relative;isolation:isolate}
   .ring:after{content:"";position:absolute;inset:-2px;border-radius:18px;background:linear-gradient(135deg,rgba(66,165,255,.35),rgba(124,255,224,.25));filter:blur(12px);z-index:-1;animation:glow 2.8s ease-in-out infinite alternate}
-  /* Auto dark based on system already handled by palette */
 </style>
 <script>
-  // scroll suave
   document.addEventListener('DOMContentLoaded',()=>{
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click',e=>{
@@ -125,8 +127,8 @@
     <h2>Proyectos</h2>
     <div class="grid cols-3">
       <article class="card">
-        <div class="snap">Inserta una captura/diagrama de la topología</div>
-        <h3>Seguridad en redes corporativas (con VPN)</h3>
+        <img src="images/VPN.png" alt="Topología con VPN" style="width:100%;border-radius:12px;border:1px solid #223b60">
+        <h3>Seguridad en redes corporativas</h3>
         <p class="muted">
           Segmentación con <b>VLANs</b>, enrutamiento dinámico, <b>ACLs</b> de control, autenticación <b>TACACS+</b>, 
           <b>Syslog</b> centralizado y <b>túnel VPN</b> cifrado entre sedes.
@@ -135,7 +137,7 @@
       </article>
 
       <article class="card">
-        <div class="snap">Espacio para otra evidencia (Wireshark/CLI)</div>
+        <img src="images/wireshark.png" alt="Captura Wireshark" style="width:100%;border-radius:12px;border:1px solid #223b60">
         <h3>Auditoría y hardening</h3>
         <p class="muted">
           Checklist de endurecimiento, registros centralizados y verificación con capturas y comandos.
@@ -144,7 +146,7 @@
       </article>
 
       <article class="card">
-        <div class="snap">Añade screenshot (Nmap / dashboard)</div>
+        <img src="images/nmap.png" alt="Resultado Nmap" style="width:100%;border-radius:12px;border:1px solid #223b60">
         <h3>Monitoreo y respuesta</h3>
         <p class="muted">
           Flujo básico de logging y alertas para visibilidad y reacción ante eventos.
@@ -189,7 +191,8 @@
     <div class="card">
       <p class="muted">¿Coordinamos una conversación? Respondo rápido.</p>
       <p>
-        <span class="pill">📧 ricardo.caceres@email.com</span>
+        <span class="pill">📧 ricardocaceres1104@gmail.com</span>
+        <span class="pill">📱 WhatsApp: <a href="https://wa.me/56979717936" target="_blank" rel="noopener">+56 9 7971 7936</a></span>
         <a class="pill" href="https://github.com/ricardocaceres1104-dot" target="_blank" rel="noopener">GitHub</a>
         <a class="pill" href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
       </p>
